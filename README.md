@@ -13,6 +13,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 I also pointed to my own proxy inside of [package.json](https://github.com/jamesalmeida/frontend-take-home/blob/main/package.json) (line 5) to get around CORS issue with making API calls to an outside domain. 
 
+Just start typing in the search input and it will populate the package card list with results.
+
+To see an example of an error state, just click the button on the bottom right of the viewport.
+
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
