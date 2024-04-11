@@ -1,9 +1,5 @@
 # Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
 In the project directory, you can run:
 
 ### `npm install`
@@ -14,6 +10,8 @@ and then run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+I also pointed to my own proxy inside of [package.json](https://github.com/jamesalmeida/frontend-take-home/blob/main/package.json) (line 5) to get around CORS issue with making API calls to an outside domain. 
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
@@ -32,6 +30,8 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
 # Gremlin Frontend Take Home Test Requirements
