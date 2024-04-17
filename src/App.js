@@ -18,6 +18,7 @@ function App() {
     [error, setError] = useState(false);
 
   // fetching the search results from the API
+  // using useCallback to cache function definition between re-renders
   const getSearchResults = useCallback(async (query) => {
     try {
       if (query && query.length) {
@@ -53,6 +54,10 @@ function App() {
     debouncedFetch(e.target.value);
   };
 
+  const clearSearch = () => {
+    setInputValue('');
+  };
+
   // handles the error tester button click
   const onErrTesterClick = () => {
     setShowResults(false);
@@ -75,6 +80,7 @@ function App() {
               value={inputValue}
               onChange={onInputChange}
             />
+            <span className="clear-icon" onClick={clearSearch}>x</span>
             
           </div>
         <div className="package-list-wrapper">
