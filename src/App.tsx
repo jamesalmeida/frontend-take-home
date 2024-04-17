@@ -1,6 +1,7 @@
 import { ReactComponent as Logo } from './logo-gremlin.svg';
 import { useState, useCallback, useMemo } from 'react';
 import { debounce, shortenText } from './utils/helperFunctions';
+import { PackageItem } from './types';
 import './App.css';
 
 // const NPM_URL = `https://api.npms.io/v2/search/suggestions?q=`;
@@ -9,17 +10,19 @@ import './App.css';
 // Also using proxy inside package.json to get around CORS issue. 
 const ENDPOINT = `https://registry.npmjs.com`;
 
+
 function App() {
   const 
     [inputValue, setInputValue] = useState(''),
-    [packageList, setPackageList] = useState([]),
+    [packageList, setPackageList] = useState<PackageItem[]>([]),
     [showResults, setShowResults] = useState(false),
     [loading, setLoading] = useState(false),
     [error, setError] = useState(false);
 
+
   // fetching the search results from the API
   // using useCallback to cache function definition between re-renders
-  const getSearchResults = useCallback(async (query) => {
+  const getSearchResults = useCallback(async (query: string) => {
     try {
       if (query && query.length) {
         setLoading(true);
@@ -48,7 +51,7 @@ function App() {
   }, [getSearchResults]);
 
   // handles the input change event
-  const onInputChange = (e) => {
+  const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setInputValue(e.target.value);
     debouncedFetch(e.target.value);
@@ -98,30 +101,31 @@ function App() {
               !error &&
               packageList.length > 0 &&
               showResults &&
-              packageList.slice(0, 19).map((item, id) => (
+              packageList.slice(0, 19).map((item, index) => (
                 <a
                   href={item?.package.links.npm}
                   className="card-link-wrapper"
-                  target="_blank" 
+                  target="_blank"
                   rel="noreferrer"
+                  key={index} // Move the key prop here
                 >
-                <div
-                  data-testid="package-card"
-                  className="package-card"
-                  key={id}
-                >
-                  <h1 className="package-name">
-                    {item?.package.name}
-                  </h1>
-                  <h3 className="package-version">
-                    v{item?.package.version}
-                  </h3>
-                  <p className="pacakge-desc">
-                    {shortenText(item?.package.description)}
-                  </p>
-                </div>
+                  <div
+                    data-testid="package-card"
+                    className="package-card"
+                  >
+                    <h1 className="package-name">
+                      {item?.package.name}
+                    </h1>
+                    <h3 className="package-version">
+                      v{item?.package.version}
+                    </h3>
+                    <p className="package-desc"> {/* Fixed typo here */}
+                      {shortenText(item?.package.description)}
+                    </p>
+                  </div>
                 </a>
               ))}
+
 
           </div>
         </div>

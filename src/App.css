@@ -8,7 +8,7 @@ h1 {
   overflow: hidden;
   white-space: nowrap;
   margin-bottom: 10px;
-  color:rgb(101, 51, 203);
+  color: rgb(101, 51, 203);
 }
 
 h3 {
@@ -25,7 +25,7 @@ h3 {
 
 p {
   font-size: 16px;
-  color:rgb(47, 34, 86);
+  color: rgb(47, 34, 86);
   text-overflow: ellipsis;
   overflow: hidden;
   text-wrap: balance;
@@ -47,7 +47,7 @@ a {
 
 nav {
   background-color: #fff;
-  padding: 25px;  
+  padding: 25px;
   position: fixed;
   top: 0%;
   width: 100%;
@@ -93,7 +93,7 @@ nav h1 {
 
 @media screen and (max-width: 500px) {
   .input-wrapper {
-padding: 25px 0px;
+    padding: 25px 0px;
   }
 }
 
@@ -130,7 +130,7 @@ padding: 25px 0px;
 
 .clear-icon {
   position: relative;
-  right: 40px;  
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
@@ -185,13 +185,13 @@ padding: 25px 0px;
   border-radius: 10px;
   color: #000;
   width: auto;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1); 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
   min-height: 200px;
 }
 
 .package-list .package-card:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .error {
@@ -206,6 +206,7 @@ padding: 25px 0px;
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -230,25 +231,28 @@ padding: 25px 0px;
 }
 
 .spinner {
-	display: block;
-	width: 34px;
-	height: 34px;
+  display: block;
+  width: 34px;
+  height: 34px;
   padding: 0 10px;
-	position: absolute;
-	top: 30%;
-	left: calc(50% - 17px);
-	background: transparent;
-	box-sizing: border-box;
-	border-top: 4px solid rgb(101, 51, 203);
-	border-left: 4px solid rgb(101, 51, 203);
-	border-right: 4px solid rgb(101, 51, 203);
-	border-bottom: 4px solid transparent;
-	border-radius: 100%;
-	animation: spin 0.6s ease-out infinite;
+  position: absolute;
+  top: 30%;
+  left: calc(50% - 17px);
+  background: transparent;
+  box-sizing: border-box;
+  border-top: 4px solid rgb(101, 51, 203);
+  border-left: 4px solid rgb(101, 51, 203);
+  border-right: 4px solid rgb(101, 51, 203);
+  border-bottom: 4px solid transparent;
+  border-radius: 100%;
+  animation: spin 0.6s ease-out infinite;
   z-index: 999;
 }
+
 @keyframes spin {
-	100% {transform: rotate(360deg)}
+  100% {
+    transform: rotate(360deg)
+  }
 }
 
 .errTestBtn {
